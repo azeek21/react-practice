@@ -1,0 +1,106 @@
+@import "./normalize.css";
+
+body {
+	background-color: #23272C;
+	color: white;
+	font-family: 'Inter';
+	background-image: url("../public/react_icon_dark.png") ;
+	background-repeat: no-repeat;
+	background-position: bottom right;
+}
+
+a{
+	color: inherit;
+	text-decoration: none;
+}
+
+header {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);	
+	justify-content: space-between;
+	align-content: center;
+	box-shadow: 0 0 20px black;
+	padding: 10px;
+	background-color: black;
+	color: #60D9F9;
+	font-weight: bold;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+}
+
+.transparent_header{
+	opacity: 80%;
+}
+
+.header-logo-container{
+	display: flex;
+	align-items: center;
+	font-size: 150%;
+}
+
+
+.header-nav {
+	justify-content: end;
+	color: white;
+	font-weight: normal;
+	display: flex;
+}
+
+.header-nav li {
+	list-style: none;
+}
+
+.logo-image {
+	width: 60px;
+	animation: logo_rotation 10s linear infinite;
+}
+
+@keyframes logo_rotation {
+	0%{
+		transform: rotate(0deg);
+		transform: rotate3d(0deg);
+	}
+	100%{
+		transform: rotate(359deg);
+		transform: rotate3d(359deg);
+	}
+}
+
+main{
+	margin: auto;
+	margin-top:100px;
+	padding: 10px;
+}
+.main-title{
+	font-weight: bold;
+}
+
+.main-content__list {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.main-content__list li{
+	width: 80%;
+	list-style: none;	
+}
+
+.main-content__list li::before{
+	content: "•";
+	color: #60D9F9;
+	display: inline-block; width: 1em;
+	margin-left: -1em;
+}
+
+
+footer {
+	height: 20px;
+	background-color: gray;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	text-align: center;
+}
