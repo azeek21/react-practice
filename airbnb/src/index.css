@@ -1,6 +1,5 @@
 body{
 	font-family: "Poppins", sans-serif;
-	height: 1000px;
 }
 
 a{
@@ -44,6 +43,7 @@ p{
 	margin: auto;
 	margin-top: 100px;
 	width: 80%;
+	max-width: 700px;
 	display: flex;
 	gap: 10px;
 	justify-content: center;
@@ -97,6 +97,7 @@ p{
 
 .experiences-text{
 	width: 60%;
+	max-width: 300px;
 	font-size: 16px;
 	font-weight: 300;
 	line-height: 18px;
@@ -111,6 +112,7 @@ p{
 	overflow-y: auto;
 	width: 100%;
 	padding-bottom: 20px;
+	margin-top: 20px;
 }
 
 .card{
@@ -128,6 +130,7 @@ p{
 .card-img-container{
 	width: 100%;
 	height: 235px;
+	min-height: 235px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -212,6 +215,8 @@ p{
 .card-title{
 	font-weight: 300;
 	font-size: 12px;
+	overflow: hidden;
+	max-height: 15px;
 }
 
 .card-price-container{

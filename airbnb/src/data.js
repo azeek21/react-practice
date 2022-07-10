@@ -41,4 +41,74 @@ export default [
 		comments: [],
 		link: "https://picsum.photos/300"
 	},
+	{
+		id: 4,
+		title: "Group Mountain Biking with Rock",
+		img: "https://picsum.photos/303",
+		stats: {
+			rating: 4.8,
+			reviewCount: 2
+		},
+		price: 50,
+		priceUnit: 'person',
+		location: 'usa',
+		comments: [],
+		link: "https://picsum.photos/300"
+	},
+	{
+		id: 5,
+		title: "Group Mountain Biking",
+		img: "https://picsum.photos/304",
+		stats: {
+			rating: 4.8,
+			reviewCount: 2
+		},
+		price: 50,
+		priceUnit: 'person',
+		location: 'usa',
+		comments: [],
+		link: "https://picsum.photos/300"
+	},
+	{
+		id: 6,
+		title: "Group Mountain Biking",
+		img: "https://picsum.photos/305",
+		stats: {
+			rating: 4.8,
+			reviewCount: 2
+		},
+		price: 50,
+		priceUnit: 'person',
+		location: 'usa',
+		comments: [],
+		link: "https://picsum.photos/300"
+	},
+	{
+		id: 7,
+		title: "Group Mountain Biking",
+		img: "https://picsum.photos/306",
+		stats: {
+			rating: 4.8,
+			reviewCount: 2
+		},
+		price: 50,
+		priceUnit: 'person',
+		location: 'usa',
+		comments: [],
+		link: "https://picsum.photos/300"
+	},
+	{
+		id: 8,
+		title: "Group Mountain Biking",
+		img: "https://picsum.photos/307",
+		stats: {
+			rating: 4.8,
+			reviewCount: 2
+		},
+		price: 50,
+		priceUnit: 'person',
+		location: 'usa',
+		comments: [],
+		link: "https://picsum.photos/300"
+	},
 ]
