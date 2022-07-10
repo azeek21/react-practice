@@ -2,7 +2,7 @@ import React from "react"
 import ReactDom from "react-dom"
 import "./index.css"
 import "./normalize.css"
-
+import EData from "./data"
 
 
 const ROOT = document.getElementById("root");
@@ -77,31 +77,40 @@ function OnlineExperiences(){
 }
 
 
-function Card() {
-	return (
+function Card({_}) {
+	let comments = _.comments.map(comment => { return (
+		<p className="card-img-comment">
+			{comment}
+		</p>)
+	});
+	console.log(comments)
+	let commentsContainer = (
+		<div className="card-img-comments">
+			{comments}		
+		</div>
+	);
+	return(
 		<div className="card">
-			<div className="card-img-container">
-				<div className="card-img-comments">
-					<p className="card-img-comment">
-						Sold out
-					</p>
-				</div>
-				<img className="card-img" src="./card-img1.png" alt="man in blue shirt" />
-			</div>
+			<a href={_.link} target="_blank" className="card-img-container">
+			
+			{_.comments.length ? commentsContainer : ''}
+				
+				<img className="card-img" src={_.img} alt="man in blue shirt" />
+			</a>
 
 			<div className="card-info-container">
 				<div className="card-user-reviews" >
 					<img src="./star.svg" alt="" />
-					<span className="card-review">5.0</span>
-					<span className="card-review-count"> (6) </span>
+					<span className="card-review">{_.stats.rating}</span>
+					<span className="card-review-count"> ({_.stats.reviewCount}) </span>
 					<span className="middle-dot"></span>
-					<span className="card-location">USA</span>
+					<span className="card-location">{_.location}</span>
 				</div>
-				<a className="card-title" href="#">
-					Life lessons with Katie Zaferes
+				<a className="card-title" href='#'>
+					{_.title}
 				</a>
 				<div className="card-price-container" >
-					<span className="card-price">From $136</span> / <span className="card-price-unit">person</span>
+					<span className="card-price">From {_.price}<sup>$</sup></span> / <span className="card-price-unit">{_.priceUnit}</span>
 				</div>
 			</div>
 		</div>
@@ -109,9 +118,13 @@ function Card() {
 }
 
 function Cards(){
+	let cards = (EData.map( _ => <Card
+		key={_.id}
+		_={_}
+	/>));
 	return (
 		<div className="cards cards-container">
-			<Card/>
+			{cards}
 		</div>
 	);
 }
