@@ -1,0 +1,145 @@
+/* It's messy here and I have no time to clean it */
+
+body{
+    background-color: #0B2434;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.game-container{
+    width: 60%;
+    max-width: 600px;
+    margin: auto;
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    padding: 50px 20px;
+    border-radius: 10px;
+    background-color: white;
+    text-align: center;
+}
+
+.dice-container{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    justify-content: space-evenly;
+    align-items: center;
+    row-gap: 20px;
+    font-family: monospace;
+    font-size: 150%;
+    text-shadow: 0px 0px 5px gray;
+}
+
+
+.dice{
+    width: 40px;
+    height: 40px;
+	padding: 5px;
+	display: grid;
+	grid-template-columns: repeat(2, auto);
+    align-items: center;
+    justify-content: center;
+	gap: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.2s ease;
+	font-weight: 700;
+	font-size: 120%;
+	background-color: transparent;
+	border-color: white;
+	border-width: 1px;
+	font-family: 'Courier New', Courier, monospace;
+    box-shadow: 0px 0px 5px 1px gray;
+	text-shadow: 0px 0px 5px gray;
+}
+
+.dot{
+	background-color: black;
+	width: 5px;
+	height: 5px;
+	border-radius: 50%;
+	box-shadow: 0px 0px 5px gainsboro;
+}
+
+.on{
+    background-color: aqua;
+    box-shadow: 0px 0px 10px 3px gray;
+	text-shadow: 0px 0px 5px white;
+}
+
+.game-title{
+    padding: 0;
+    margin: 0;
+}
+
+.roll{
+    margin-top: 30px;
+    padding: 5px 20px;
+    text-transform: uppercase;
+    background-color: blue;
+    color: white;
+    border-radius: 5px;
+    text-shadow: 0px 0px 5px wheat;
+    font-size: 120%;
+    cursor: pointer;
+    -webkit-user-drag: unset;
+	border-width: 5px;
+	border-color: blue;
+}
+
+.stats{
+	color: white;
+	position: absolute;
+	top: 0px;
+	left: 10px;
+	text-align: left;
+}
+
+.best{
+	color: rgb(20, 222, 20);
+	text-shadow:  1px 1px 5px #8b8d8e;
+}
+
+.trashcan-container{
+	background-color: #ffffff;
+	width: 30px;
+	height: 30px;
+	cursor: pointer;
+	transition: .1s ease;
+}
+
+.trashcan-container:hover{
+	background-color: red;
+}
+
+.trashcan-img{
+	width: 100%;
+	height: 100%;
+	object-fit: fill;
+}
+
+.github--link{
+	width: 50px;
+	position: absolute;
+	border-radius: 50%;
+	overflow: hidden;
+	bottom: 10px;
+	right: 10px;
+	display: grid;
+	place-items: center;
+}
+
+.github--link:hover > .github--img{
+	transform: rotateY(900deg);
+}
+
+.github--img{
+	background-color: transparent;
+	width: 100%;
+	height: auto;
+	object-fit: contain;
+	transition: 1s ease-in;
+}
