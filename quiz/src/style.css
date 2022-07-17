@@ -1,0 +1,410 @@
+/* global */
+
+*{
+	box-sizing: border-box;
+}
+body{
+	font-family: "Karla";
+	color: #293264;
+	background-color: #F5F7FB;
+	width: 100%;
+	height: 100vh;
+	position: relative;
+	overflow-x: hidden;
+}
+
+#root{
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: auto;
+	position: relative;
+}
+
+.app{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	padding: 10px 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: start;
+}
+
+.circle{
+	position: fixed;
+	overflow: hidden;
+	transition: 0.3s linear;
+	z-index: -999;
+}
+
+.circle--top{
+	width: 45%;
+	height: auto;
+	top: -22.5%;
+	right: -22.5%;
+}
+
+@keyframes circle--rotate {
+	0%{
+		transform: rotate(0deg) ;
+	}
+	100%{
+		transform: rotate(359deg);
+	}
+}
+
+.circle--bottom{
+	width: 45%;
+	height: auto;
+	bottom: -20%;
+	left: -20%;
+}
+
+.circle__img{
+	width: 100%;
+	height: 100%;
+	object-fit: fill;
+	animation: circle--rotate 15s linear infinite;
+}
+
+a{
+	color: inherit;
+	text-transform: none;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+
+p, h1, h2, h3 ,h4 ,h5, h6{
+	padding: 0;
+	margin: 0;	
+	cursor:default;
+}
+
+h2::selection{
+	background-color: rgb(255, 145, 0);
+}
+
+.button{
+	padding: 15px 60px;
+	font-size: 16px;
+	background-color: transparent;
+	border-radius: 15px;
+	font-weight: 500;
+	border: none;
+	cursor: pointer;
+}
+
+.button--unavailable{
+	filter: opacity(0.5);
+	background-color: #293264;
+	color: gray;
+	cursor: not-allowed;
+}
+
+/* Globals end */
+
+/* Main start screen */
+.start{
+	position: relative;
+	max-width: 500px;
+	max-height: 400px;
+	min-width: 400px;
+	min-height: 300px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	flex-direction: column;
+	gap: 30px;
+	padding: 50px;
+	border: 5px solid #293264;
+	border-radius: 0 50px 0 50px;
+}
+
+
+.button--primary{
+	background-color: #4D5B9E;
+	color: white;
+}
+
+.start__title{
+	font-size: 32px;
+	color: #293264;
+	font-weight: 700;
+}
+
+.start__text{
+	font-size: 16px;
+	font-weight: 400;
+}
+/* main start screen end */
+
+/* progressbar */
+.progressbar{
+	height: 5px;
+	width: 100%;
+	border-radius: 10px;
+	background-color: rgba(41, 50, 100, 0.5);
+	overflow: hidden;
+	transition: width 1s ease-out;
+}
+
+.progressbar__progress{
+	height: 100%;
+	width: 0%;
+	background-color: rgb(0, 194, 0);
+	transition: width 1s ease-out;
+}
+/* progressbar end */
+
+/* questions */
+.questions{
+	width: 90%;
+	margin: auto;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	gap: 30px;
+	flex-direction: column;
+}
+
+
+.question{
+	width: 100%;
+	font-weight: 700;
+	display: flex;
+	font-size: 16px;
+	flex-direction: column;
+	gap: 20px;
+}
+
+/* questions end */
+
+/* answers and answer */
+.answers{
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	gap: 10px;
+}
+
+.answer{
+	padding: 5px 15px;
+	border: 1px solid #293264;
+	border-radius: 10px;
+	cursor: pointer;
+}
+
+.answer--selected{
+	background-color: #D6DBF5;
+	border-color: transparent;
+}
+
+.answer--incorrect{
+	background-color: #F8BCBC;
+	border-color: transparent;
+	color: rgba(8, 29, 147, 0.5);
+}
+
+.answer--correct{
+	background-color: #94D7A2;
+	border-color: transparent;
+
+}
+
+.answer--disabled{
+	filter: opacity(0.5);
+	cursor:not-allowed;
+}
+/* answers and answer end */
+
+/* bottom statusar */
+
+.statusbar{
+	width: 100%;
+	padding: 10px 5% 10px 5%;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	gap: 30px;
+	font-size: 16px;
+	margin: 10px 0px;
+}
+
+
+/* Loading screen */
+.loading{
+	width: 300px;
+	height: 280px;
+	border-radius: 0px 50px 0px 50px;
+	border: 5px solid #293264;
+	position: relative;
+	background-color: rgba(248, 188, 188, 0.3);
+	z-index: 999;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin: auto;
+}
+
+.loading__text{
+	position: absolute;
+	bottom: -40px;
+	right: 0;	
+}
+
+.loading__container{
+	position: relative;
+	/* background-color: #12217998; */
+	grid-template-columns: repeat(2, auto);
+	height: 100px;
+	width: 100px;
+	align-items: center;
+	justify-content: center;
+	animation: rotating__container 5s ease-in-out infinite;
+}
+
+@keyframes rotating__container {
+	0%{
+		transform: rotate(0deg);
+		width: 100px;
+		height: 100px;
+	}
+	50%{
+		width: 200px;
+		height: 200px;
+		transform: rotate(720deg);
+	}
+	100%{
+		transform: rotate(900deg);
+		width: 100px;
+		height: 100px;
+	}
+}
+
+.loading__animated{
+	position: absolute;
+	display: block;
+	width: 50px;
+	height: 50px;
+	background-color: #293264;
+}
+
+.middle{
+	background-color: #293264;
+	opacity: 0;
+	animation: visibility--toggle 5s linear infinite;
+}
+
+@keyframes visibility--toggle {
+	0%{
+		opacity: 0;
+	}
+	10%{
+		opacity: 0;
+	}
+	20%{
+		opacity: 0.5;
+	}
+	40%{
+		opacity: 1;
+	}
+	70%{
+		opacity: 1;
+	}
+	75%{
+		opacity: 0;
+	}
+	100%{
+		opacity: 0;
+	}
+}
+
+.animated--1{
+	border-radius: 100px 100px 0px 100px;
+	top: 0;
+	left: 0;
+	/* background-color: green; */
+	/* transform: translate(6px, 6px); */
+
+}
+
+.animated--2{
+	border-radius: 100px 100px 100px 0px;
+	top: 0;
+	right: 0;
+	/* transform: translate(-6px, 6px); */
+}
+
+.animated--3{
+	border-radius: 100px 0px 100px 100px;
+	bottom: 0;
+	left: 0;
+	/* background-color: aqua; */
+	/* transform: translate(6px, -6px); */
+}
+
+.animated--4{
+	bottom: 0;
+	right: 0;
+	border-radius: 0px 100px 100px 100px;
+	/* transform: translate(-6px, -6px); */
+	/* background-color: palevioletred; */
+}
+
+.middle-1{
+	top: 37.5%;
+	left: -25px;
+	transform: rotate(45deg);
+	border-radius: 50px 0px 50px 50px;
+}
+
+.middle-2{
+	top: -25px;
+	left: 37.5%;
+	transform: rotate(45deg);
+	border-radius: 50px 50px 0px 50px;
+
+}
+
+.middle-3{
+	right: -25px;
+	top: 37.5%;
+	transform: rotate(45deg);
+	border-radius: 50px 50px 50px 0px;
+}
+
+.middle-4{
+	bottom: -25px;
+	left: 37.5%;
+	transform: rotate(45deg);
+	border-radius: 0px 50px 50px 50px;
+}
+
+/* Loading screen end */
+
+/* Footer */
+.footer{
+	padding: 10px;
+	align-self: flex-start;
+	width: 100%;
+	text-align: center;
+	color: gray;
+	border: 2px dashed #29326473;
+	border-radius: 50px 50px 0px 0px;
+	border-bottom: none;
+}
+
+.start .footer{
+	position: absolute;
+	border-radius: 0px 50px 0px 0px;
+	bottom: 0;
+	left: 0;
+	border-left: none;
+}
